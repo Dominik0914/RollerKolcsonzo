@@ -5,7 +5,8 @@ foreach (string sor in sorok)
 {
     utazasok.Add(new RollerUtazas(sor));
 }
-Console.WriteLine($"Utazások részletei:");
+Console.WriteLine("Adatok beolvasása a rollerek.txt fájlból...");
+Console.WriteLine($"\nUtazások részletei:");
 foreach (RollerUtazas aktualis in utazasok)
 {
     Console.WriteLine(aktualis);
