@@ -5,3 +5,14 @@ foreach (string sor in sorok)
 {
     utazasok.Add(new RollerUtazas(sor));
 }
+Console.WriteLine($"Utazások részletei:");
+foreach (RollerUtazas aktualis in utazasok)
+{
+    Console.WriteLine(aktualis);
+}
+Console.WriteLine("");
+Console.WriteLine("Statisztika:");
+int ossz= utazasok.Sum(a => a.FizetendoDij());
+var leghossz = utazasok.MaxBy(a => a.UtazasiIdoPerc);
+Console.WriteLine($"Kölcsönző teljes napi bevétele: {ossz} Ft");
+Console.WriteLine($"Leghosszabb utazás: {leghossz.Felhasználonev} ({leghossz.UtazasiIdoPerc} perc)");
